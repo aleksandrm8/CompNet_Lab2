@@ -1,29 +1,29 @@
-
-// udp-genDlg.h : файл заголовка
+п»ї
+// udp-genDlg.h : С„Р°Р№Р» Р·Р°РіРѕР»РѕРІРєР°
 //
 
 #pragma once
 
 
-// диалоговое окно CudpgenDlg
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ CudpgenDlg
 class CudpgenDlg : public CDialogEx
 {
-// Создание
+// РЎРѕР·РґР°РЅРёРµ
 public:
-	CudpgenDlg(CWnd* pParent = NULL);	// стандартный конструктор
+	CudpgenDlg(CWnd* pParent = NULL);	// СЃС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 
-// Данные диалогового окна
+// Р”Р°РЅРЅС‹Рµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 	enum { IDD = IDD_UDPGEN_DIALOG };
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// поддержка DDX/DDV
+	virtual void DoDataExchange(CDataExchange* pDX);	// РїРѕРґРґРµСЂР¶РєР° DDX/DDV
 
 
-// Реализация
+// Р РµР°Р»РёР·Р°С†РёСЏ
 protected:
 	HICON m_hIcon;
 
-	// Созданные функции схемы сообщений
+	// РЎРѕР·РґР°РЅРЅС‹Рµ С„СѓРЅРєС†РёРё СЃС…РµРјС‹ СЃРѕРѕР±С‰РµРЅРёР№
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
@@ -31,68 +31,68 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnIpnFieldchangedIpaddress2(NMHDR *pNMHDR, LRESULT *pResult);
-	// IP отправителя
+	// IP РѕС‚РїСЂР°РІРёС‚РµР»СЏ
 	DWORD SourceIP;
-	// Порт отправителя
+	// РџРѕСЂС‚ РѕС‚РїСЂР°РІРёС‚РµР»СЏ
 	short SourcePort;
-	// IP получателя
+	// IP РїРѕР»СѓС‡Р°С‚РµР»СЏ
 	DWORD DestinationIP;
-	// Порт получателя
+	// РџРѕСЂС‚ РїРѕР»СѓС‡Р°С‚РµР»СЏ
 	int DestinationPort;
-	// Текст содержимого пакета
+	// РўРµРєСЃС‚ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РїР°РєРµС‚Р°
 	CString MessageText;
 
-	// Структура заголовка IP
+	// РЎС‚СЂСѓРєС‚СѓСЂР° Р·Р°РіРѕР»РѕРІРєР° IP
 	struct ip_header {
-		unsigned char	ver_ihl;	// Длина заголовка (4 бита) 
-		                            // (измеряется в словах по 32 бита) +
-		                            // + Номер версии протокола (4 бита)
-		unsigned char	tos;		// Тип сервиса 
-		unsigned short	tlen;		// Общая длина пакета 
-		unsigned short	id;		    // Идентификатор пакета
-		unsigned short	flags_fo;	// Управляющие флаги (3 бита) 
-		                            // + Смещение фрагмента (13 бит)
-		unsigned char	ttl;		// Время жизни пакета
-		unsigned char	proto;		// Протокол верхнего уровня 
-		unsigned short	crc;		// CRC заголовка
-		unsigned int	src_addr;	// IP-адрес отправителя
-		unsigned int	dst_addr;	// IP-адрес получателя
+		unsigned char	ver_ihl;	// Р”Р»РёРЅР° Р·Р°РіРѕР»РѕРІРєР° (4 Р±РёС‚Р°) 
+		                            // (РёР·РјРµСЂСЏРµС‚СЃСЏ РІ СЃР»РѕРІР°С… РїРѕ 32 Р±РёС‚Р°) +
+		                            // + РќРѕРјРµСЂ РІРµСЂСЃРёРё РїСЂРѕС‚РѕРєРѕР»Р° (4 Р±РёС‚Р°)
+		unsigned char	tos;		// РўРёРї СЃРµСЂРІРёСЃР° 
+		unsigned short	tlen;		// РћР±С‰Р°СЏ РґР»РёРЅР° РїР°РєРµС‚Р° 
+		unsigned short	id;		    // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїР°РєРµС‚Р°
+		unsigned short	flags_fo;	// РЈРїСЂР°РІР»СЏСЋС‰РёРµ С„Р»Р°РіРё (3 Р±РёС‚Р°) 
+		                            // + РЎРјРµС‰РµРЅРёРµ С„СЂР°РіРјРµРЅС‚Р° (13 Р±РёС‚)
+		unsigned char	ttl;		// Р’СЂРµРјСЏ Р¶РёР·РЅРё РїР°РєРµС‚Р°
+		unsigned char	proto;		// РџСЂРѕС‚РѕРєРѕР» РІРµСЂС…РЅРµРіРѕ СѓСЂРѕРІРЅСЏ 
+		unsigned short	crc;		// CRC Р·Р°РіРѕР»РѕРІРєР°
+		unsigned int	src_addr;	// IP-Р°РґСЂРµСЃ РѕС‚РїСЂР°РІРёС‚РµР»СЏ
+		unsigned int	dst_addr;	// IP-Р°РґСЂРµСЃ РїРѕР»СѓС‡Р°С‚РµР»СЏ
 	};
 
-	// Структура заголовка UDP
+	// РЎС‚СЂСѓРєС‚СѓСЂР° Р·Р°РіРѕР»РѕРІРєР° UDP
 	struct udp_header {
-		unsigned short   src_port ;	// номер порта отправителя 
-		unsigned short   dst_port ;	// номер порта получателя 
-		unsigned short   length;	// длина датаграммы 
-		unsigned short   crc;		// контрольная сумма заголовка
+		unsigned short   src_port ;	// РЅРѕРјРµСЂ РїРѕСЂС‚Р° РѕС‚РїСЂР°РІРёС‚РµР»СЏ 
+		unsigned short   dst_port ;	// РЅРѕРјРµСЂ РїРѕСЂС‚Р° РїРѕР»СѓС‡Р°С‚РµР»СЏ 
+		unsigned short   length;	// РґР»РёРЅР° РґР°С‚Р°РіСЂР°РјРјС‹ 
+		unsigned short   crc;		// РєРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° Р·Р°РіРѕР»РѕРІРєР°
 	}; 
 
-	// Псевдозаголовок для UDP пакетов
+	// РџСЃРµРІРґРѕР·Р°РіРѕР»РѕРІРѕРє РґР»СЏ UDP РїР°РєРµС‚РѕРІ
 	struct pseudo_header {
-		unsigned int src_addr;		// адрес отправителя 
-		unsigned int dst_addr;		// адрес получателя 
-		unsigned char zero ;		// начальная установка 
-		unsigned char proto;		// протокол
-		unsigned short length;		// длина заголовка 
+		unsigned int src_addr;		// Р°РґСЂРµСЃ РѕС‚РїСЂР°РІРёС‚РµР»СЏ 
+		unsigned int dst_addr;		// Р°РґСЂРµСЃ РїРѕР»СѓС‡Р°С‚РµР»СЏ 
+		unsigned char zero ;		// РЅР°С‡Р°Р»СЊРЅР°СЏ СѓСЃС‚Р°РЅРѕРІРєР° 
+		unsigned char proto;		// РїСЂРѕС‚РѕРєРѕР»
+		unsigned short length;		// РґР»РёРЅР° Р·Р°РіРѕР»РѕРІРєР° 
 	};
 
 
-	// Отправка пакета
+	// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚Р°
 	afx_msg void SendPacketBTN();
-	// Контрольная сумма IP
+	// РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° IP
 	unsigned short rs_crc(unsigned short * buffer, int length);
-	// Подсчёт CRC в UDP пакетах
+	// РџРѕРґСЃС‡С‘С‚ CRC РІ UDP РїР°РєРµС‚Р°С…
 	unsigned short rs_pseudo_crc(char * data, int data_length, unsigned int src_addr, unsigned int dst_addr, int packet_length, unsigned char proto);
-	// Инициализация библиотеки Winsock
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р±РёР±Р»РёРѕС‚РµРєРё Winsock
 	int rs_init(int v_major, int v_minor);
-	// Настройка RAW сокета
+	// РќР°СЃС‚СЂРѕР№РєР° RAW СЃРѕРєРµС‚Р°
 	int rs_set_tos(SOCKET s, unsigned char new_tos);
-	// Установка опции RAW для сокета
+	// РЈСЃС‚Р°РЅРѕРІРєР° РѕРїС†РёРё RAW РґР»СЏ СЃРѕРєРµС‚Р°
 	int rs_set_raw(SOCKET s);
-	// Отправка пакетов IP
+	// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚РѕРІ IP
 	int rs_send_ip(SOCKET s, struct ip_header iph, unsigned char * data, int data_length, unsigned short dst_port_raw);
-	// Отправка пакетов UDP
+	// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚РѕРІ UDP
 	int rs_send_udp(SOCKET s, struct ip_header iph, struct udp_header udph, unsigned char * data, int data_length);
-	// Деинициализация библиотеки Winsock
+	// Р”РµРёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р±РёР±Р»РёРѕС‚РµРєРё Winsock
 	int rs_exit(void);
 };

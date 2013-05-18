@@ -1,5 +1,5 @@
-
-// udp-genDlg.cpp : файл реализации
+п»ї
+// udp-genDlg.cpp : С„Р°Р№Р» СЂРµР°Р»РёР·Р°С†РёРё
 //
 
 #include "stdafx.h"
@@ -11,15 +11,15 @@
 #define new DEBUG_NEW
 #endif
 
-// Версия IP пакета
+// Р’РµСЂСЃРёСЏ IP РїР°РєРµС‚Р°
 #define RS_IP_VERSION		0x40
 
-// IP флаги фрагментации
+// IP С„Р»Р°РіРё С„СЂР°РіРјРµРЅС‚Р°С†РёРё
 #define IP_FLAG_FO_MASK	0xE000
 #define IP_FLAG_MORE_FRAG	0x2000
 #define IP_FLAG_DONT_FRAG	0x4000
 
-// IP тип сервиса
+// IP С‚РёРї СЃРµСЂРІРёСЃР°
 #define IP_TOS_0x00		0x00
 #define IP_TOS_0x02		0x02
 #define IP_TOS_0x04		0x04
@@ -29,20 +29,20 @@
 
 
 
-// Диалоговое окно CAboutDlg используется для описания сведений о приложении
+// Р”РёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ CAboutDlg РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РѕРїРёСЃР°РЅРёСЏ СЃРІРµРґРµРЅРёР№ Рѕ РїСЂРёР»РѕР¶РµРЅРёРё
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-// Данные диалогового окна
+// Р”Р°РЅРЅС‹Рµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 	enum { IDD = IDD_ABOUTBOX };
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // поддержка DDX/DDV
+	virtual void DoDataExchange(CDataExchange* pDX);    // РїРѕРґРґРµСЂР¶РєР° DDX/DDV
 
-// Реализация
+// Р РµР°Р»РёР·Р°С†РёСЏ
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -60,7 +60,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// диалоговое окно CudpgenDlg
+// РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ CudpgenDlg
 
 
 
@@ -95,15 +95,15 @@ BEGIN_MESSAGE_MAP(CudpgenDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// обработчики сообщений CudpgenDlg
+// РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕРѕР±С‰РµРЅРёР№ CudpgenDlg
 
 BOOL CudpgenDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// Добавление пункта "О программе..." в системное меню.
+	// Р”РѕР±Р°РІР»РµРЅРёРµ РїСѓРЅРєС‚Р° "Рћ РїСЂРѕРіСЂР°РјРјРµ..." РІ СЃРёСЃС‚РµРјРЅРѕРµ РјРµРЅСЋ.
 
-	// IDM_ABOUTBOX должен быть в пределах системной команды.
+	// IDM_ABOUTBOX РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РІ РїСЂРµРґРµР»Р°С… СЃРёСЃС‚РµРјРЅРѕР№ РєРѕРјР°РЅРґС‹.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -121,14 +121,14 @@ BOOL CudpgenDlg::OnInitDialog()
 		}
 	}
 
-	// Задает значок для этого диалогового окна. Среда делает это автоматически,
-	//  если главное окно приложения не является диалоговым
-	SetIcon(m_hIcon, TRUE);			// Крупный значок
-	SetIcon(m_hIcon, FALSE);		// Мелкий значок
+	// Р—Р°РґР°РµС‚ Р·РЅР°С‡РѕРє РґР»СЏ СЌС‚РѕРіРѕ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°. РЎСЂРµРґР° РґРµР»Р°РµС‚ СЌС‚Рѕ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё,
+	//  РµСЃР»Рё РіР»Р°РІРЅРѕРµ РѕРєРЅРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РґРёР°Р»РѕРіРѕРІС‹Рј
+	SetIcon(m_hIcon, TRUE);			// РљСЂСѓРїРЅС‹Р№ Р·РЅР°С‡РѕРє
+	SetIcon(m_hIcon, FALSE);		// РњРµР»РєРёР№ Р·РЅР°С‡РѕРє
 
-	// TODO: добавьте дополнительную инициализацию
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅСѓСЋ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЋ
 
-	return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
+	return TRUE;  // РІРѕР·РІСЂР°С‚ Р·РЅР°С‡РµРЅРёСЏ TRUE, РµСЃР»Рё С„РѕРєСѓСЃ РЅРµ РїРµСЂРµРґР°РЅ СЌР»РµРјРµРЅС‚Сѓ СѓРїСЂР°РІР»РµРЅРёСЏ
 }
 
 void CudpgenDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -144,19 +144,19 @@ void CudpgenDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// При добавлении кнопки свертывания в диалоговое окно нужно воспользоваться приведенным ниже кодом,
-//  чтобы нарисовать значок. Для приложений MFC, использующих модель документов или представлений,
-//  это автоматически выполняется рабочей областью.
+// РџСЂРё РґРѕР±Р°РІР»РµРЅРёРё РєРЅРѕРїРєРё СЃРІРµСЂС‚С‹РІР°РЅРёСЏ РІ РґРёР°Р»РѕРіРѕРІРѕРµ РѕРєРЅРѕ РЅСѓР¶РЅРѕ РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РїСЂРёРІРµРґРµРЅРЅС‹Рј РЅРёР¶Рµ РєРѕРґРѕРј,
+//  С‡С‚РѕР±С‹ РЅР°СЂРёСЃРѕРІР°С‚СЊ Р·РЅР°С‡РѕРє. Р”Р»СЏ РїСЂРёР»РѕР¶РµРЅРёР№ MFC, РёСЃРїРѕР»СЊР·СѓСЋС‰РёС… РјРѕРґРµР»СЊ РґРѕРєСѓРјРµРЅС‚РѕРІ РёР»Рё РїСЂРµРґСЃС‚Р°РІР»РµРЅРёР№,
+//  СЌС‚Рѕ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ СЂР°Р±РѕС‡РµР№ РѕР±Р»Р°СЃС‚СЊСЋ.
 
 void CudpgenDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // контекст устройства для рисования
+		CPaintDC dc(this); // РєРѕРЅС‚РµРєСЃС‚ СѓСЃС‚СЂРѕР№СЃС‚РІР° РґР»СЏ СЂРёСЃРѕРІР°РЅРёСЏ
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Выравнивание значка по центру клиентского прямоугольника
+		// Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ Р·РЅР°С‡РєР° РїРѕ С†РµРЅС‚СЂСѓ РєР»РёРµРЅС‚СЃРєРѕРіРѕ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -164,7 +164,7 @@ void CudpgenDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// Нарисуйте значок
+		// РќР°СЂРёСЃСѓР№С‚Рµ Р·РЅР°С‡РѕРє
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -173,8 +173,8 @@ void CudpgenDlg::OnPaint()
 	}
 }
 
-// Система вызывает эту функцию для получения отображения курсора при перемещении
-//  свернутого окна.
+// РЎРёСЃС‚РµРјР° РІС‹Р·С‹РІР°РµС‚ СЌС‚Сѓ С„СѓРЅРєС†РёСЋ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РєСѓСЂСЃРѕСЂР° РїСЂРё РїРµСЂРµРјРµС‰РµРЅРёРё
+//  СЃРІРµСЂРЅСѓС‚РѕРіРѕ РѕРєРЅР°.
 HCURSOR CudpgenDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -185,36 +185,36 @@ HCURSOR CudpgenDlg::OnQueryDragIcon()
 void CudpgenDlg::OnIpnFieldchangedIpaddress2(NMHDR *pNMHDR, LRESULT *pResult)
 {
 	LPNMIPADDRESS pIPAddr = reinterpret_cast<LPNMIPADDRESS>(pNMHDR);
-	// TODO: добавьте свой код обработчика уведомлений
+	// TODO: РґРѕР±Р°РІСЊС‚Рµ СЃРІРѕР№ РєРѕРґ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СѓРІРµРґРѕРјР»РµРЅРёР№
 	*pResult = 0;
 }
 
 
-// Отправка пакета
+// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚Р°
 void CudpgenDlg::SendPacketBTN()
 {
-	// Инициализация библиотеки Winsock
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р±РёР±Р»РёРѕС‚РµРєРё Winsock
 	rs_init(2, 2);
 
-	// Инициализация RAW-сокета
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ RAW-СЃРѕРєРµС‚Р°
 	SOCKET rsock = WSASocket(AF_INET, SOCK_RAW, IPPROTO_RAW, NULL, 0, WSA_FLAG_OVERLAPPED);
 	if(rsock == INVALID_SOCKET) {
 		CString ErrorSessage;
-		ErrorSessage.Format(L"Ошибка №%d !", WSAGetLastError());
-		MessageBox(ErrorSessage, L"Ошибка", MB_OK | MB_ICONERROR);
+		ErrorSessage.Format(L"РћС€РёР±РєР° в„–%d !", WSAGetLastError());
+		MessageBox(ErrorSessage, L"РћС€РёР±РєР°", MB_OK | MB_ICONERROR);
 		return;
 	} 
 
-	// Установка типа сервиса
+	// РЈСЃС‚Р°РЅРѕРІРєР° С‚РёРїР° СЃРµСЂРІРёСЃР°
 	rs_set_tos(rsock, IP_TOS_0x00);
 
-	// Установка опций для RAW-сокета
+	// РЈСЃС‚Р°РЅРѕРІРєР° РѕРїС†РёР№ РґР»СЏ RAW-СЃРѕРєРµС‚Р°
 	rs_set_raw(rsock);
 
-	// Чтение адресов
+	// Р§С‚РµРЅРёРµ Р°РґСЂРµСЃРѕРІ
 	UpdateData(TRUE);
 
-	// Подготовка заголовка IP
+	// РџРѕРґРіРѕС‚РѕРІРєР° Р·Р°РіРѕР»РѕРІРєР° IP
 	struct ip_header iph;
 	iph.ver_ihl  = RS_IP_VERSION;
 	iph.tos      = IP_TOS_0x00;
@@ -225,34 +225,34 @@ void CudpgenDlg::SendPacketBTN()
 	iph.src_addr = htonl(SourceIP);
 	iph.dst_addr = htonl(DestinationIP);
 
-	// Подготовка заголовка TCP
+	// РџРѕРґРіРѕС‚РѕРІРєР° Р·Р°РіРѕР»РѕРІРєР° TCP
 	struct udp_header udph;
 	udph.src_port = htons(SourcePort);
 	udph.dst_port = htons(DestinationPort);
 
-	// Подготовка сообщения.
+	// РџРѕРґРіРѕС‚РѕРІРєР° СЃРѕРѕР±С‰РµРЅРёСЏ.
 	char * message_data;
 	USES_CONVERSION;
 	message_data = (char *)T2A((LPCTSTR)MessageText);
 	
-	// Отправка пакета
+	// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚Р°
 	if(SOCKET_ERROR == rs_send_udp(rsock, iph, udph, reinterpret_cast<unsigned char *>(message_data), sizeof(message_data))) {
-		MessageText = L"Ошибка отправки!";
+		MessageText = L"РћС€РёР±РєР° РѕС‚РїСЂР°РІРєРё!";
 		UpdateData(FALSE);
 	}
 
-	// Завершение работы
+	// Р—Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹
 	rs_exit();
 
 }
 
 
-// Контрольная сумма IP
+// РљРѕРЅС‚СЂРѕР»СЊРЅР°СЏ СЃСѓРјРјР° IP
 unsigned short CudpgenDlg::rs_crc(unsigned short * buffer, int length)
 {
 	unsigned long crc = 0;
 	
-	// Вычисление CRC 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ CRC 
 	while(length > 1) {
 		crc += *buffer++;
 		length -= sizeof(unsigned short);
@@ -260,16 +260,16 @@ unsigned short CudpgenDlg::rs_crc(unsigned short * buffer, int length)
 	if(length)
 		crc += *(unsigned char*)buffer;
 	
-	// Закончить вычисления 
+	// Р—Р°РєРѕРЅС‡РёС‚СЊ РІС‹С‡РёСЃР»РµРЅРёСЏ 
 	crc =  (crc >> 16) + (crc & 0xffff);
 	crc += (crc >> 16); 
 	
-	// Возвращаем инвертированное значение 
+	// Р’РѕР·РІСЂР°С‰Р°РµРј РёРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ 
 	return (unsigned short)(~crc);
 }
 
 
-// Подсчёт CRC в UDP пакетах
+// РџРѕРґСЃС‡С‘С‚ CRC РІ UDP РїР°РєРµС‚Р°С…
 unsigned short CudpgenDlg::rs_pseudo_crc(char * data, int data_length, unsigned int src_addr, unsigned int dst_addr, int packet_length, unsigned char proto)
 {
 	char * buffer; 
@@ -278,7 +278,7 @@ unsigned short CudpgenDlg::rs_pseudo_crc(char * data, int data_length, unsigned 
 	struct pseudo_header ph; 
 	unsigned short p_crc = 0;
 
-	// Заполнение структуры псевдозаголовка 
+	// Р—Р°РїРѕР»РЅРµРЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂС‹ РїСЃРµРІРґРѕР·Р°РіРѕР»РѕРІРєР° 
 	ph.src_addr = src_addr; 
 	ph.dst_addr = dst_addr; 
 	ph.zero = 0; 
@@ -288,26 +288,26 @@ unsigned short CudpgenDlg::rs_pseudo_crc(char * data, int data_length, unsigned 
 	full_length = header_length + data_length; 
 	buffer = (char *)calloc(full_length, sizeof(char)); 
 
-	// Генерация псевдозаголовка 
+	// Р“РµРЅРµСЂР°С†РёСЏ РїСЃРµРІРґРѕР·Р°РіРѕР»РѕРІРєР° 
 	memcpy(buffer, &ph, header_length); 
 	memcpy(buffer + header_length, data, data_length); 
 
-	// Вычисление CRC. 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ CRC. 
 	p_crc = rs_crc((unsigned short*)buffer, full_length);
 	free(buffer); 
 	return p_crc;
 }
 
-// Инициализация библиотеки Winsock
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р±РёР±Р»РёРѕС‚РµРєРё Winsock
 int CudpgenDlg::rs_init(int v_major, int v_minor)
 {
 	WSADATA wsadata;
 	
-	// Инициализация WinSock заданной версии
+	// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ WinSock Р·Р°РґР°РЅРЅРѕР№ РІРµСЂСЃРёРё
 	if(WSAStartup(MAKEWORD(v_major, v_minor), &wsadata))
 		return WSAGetLastError();
 	
-	// Проверка версии WinSock 
+	// РџСЂРѕРІРµСЂРєР° РІРµСЂСЃРёРё WinSock 
 	if(LOBYTE(wsadata.wVersion) != v_minor || HIBYTE(wsadata.wVersion) != v_major) { 
 		rs_exit();
 		return WSAGetLastError(); 
@@ -317,7 +317,7 @@ int CudpgenDlg::rs_init(int v_major, int v_minor)
 }
 
 
-// Настройка RAW сокета
+// РќР°СЃС‚СЂРѕР№РєР° RAW СЃРѕРєРµС‚Р°
 int CudpgenDlg::rs_set_tos(SOCKET s, unsigned char new_tos)
 {
 	int tos = new_tos;
@@ -331,13 +331,13 @@ int CudpgenDlg::rs_set_tos(SOCKET s, unsigned char new_tos)
 }
 
 
-// Установка опции RAW для сокета
+// РЈСЃС‚Р°РЅРѕРІРєР° РѕРїС†РёРё RAW РґР»СЏ СЃРѕРєРµС‚Р°
 int CudpgenDlg::rs_set_raw(SOCKET s)
 {
 	unsigned int use_own_header = 1;
 
-	// Установка опции RAW для сокета, что говорит о том
-	// что мы вручную будем формировать заголовки пакетов
+	// РЈСЃС‚Р°РЅРѕРІРєР° РѕРїС†РёРё RAW РґР»СЏ СЃРѕРєРµС‚Р°, С‡С‚Рѕ РіРѕРІРѕСЂРёС‚ Рѕ С‚РѕРј
+	// С‡С‚Рѕ РјС‹ РІСЂСѓС‡РЅСѓСЋ Р±СѓРґРµРј С„РѕСЂРјРёСЂРѕРІР°С‚СЊ Р·Р°РіРѕР»РѕРІРєРё РїР°РєРµС‚РѕРІ
 	if(setsockopt(s, IPPROTO_IP, 2, (char*)&use_own_header, sizeof(use_own_header)) == SOCKET_ERROR)
 		return WSAGetLastError();
 	
@@ -345,7 +345,7 @@ int CudpgenDlg::rs_set_raw(SOCKET s)
 }
 
 
-// Отправка пакетов IP
+// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚РѕРІ IP
 int CudpgenDlg::rs_send_ip(SOCKET s, struct ip_header iph, unsigned char * data, int data_length, unsigned short dst_port_raw)
 {
 	char * buffer;
@@ -358,43 +358,43 @@ int CudpgenDlg::rs_send_ip(SOCKET s, struct ip_header iph, unsigned char * data,
 	target.sin_addr.s_addr = iph.dst_addr; 
 	target.sin_port = dst_port_raw; 
 
-	// Вычисление длины и заголовка пакета 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РґР»РёРЅС‹ Рё Р·Р°РіРѕР»РѕРІРєР° РїР°РєРµС‚Р° 
 	header_length = sizeof(struct ip_header); 
 	packet_length = header_length + data_length; 
 
-	// Установка CRC. 
+	// РЈСЃС‚Р°РЅРѕРІРєР° CRC. 
 	iph.crc = 0; 
 
-	// Заполнение некоторых полей заголовка IP
+	// Р—Р°РїРѕР»РЅРµРЅРёРµ РЅРµРєРѕС‚РѕСЂС‹С… РїРѕР»РµР№ Р·Р°РіРѕР»РѕРІРєР° IP
 	iph.ver_ihl = RS_IP_VERSION;
 
-	// Если длина пакета не задана, то длина пакета 
-	// приравнивается к длине заголовка 
+	// Р•СЃР»Рё РґР»РёРЅР° РїР°РєРµС‚Р° РЅРµ Р·Р°РґР°РЅР°, С‚Рѕ РґР»РёРЅР° РїР°РєРµС‚Р° 
+	// РїСЂРёСЂР°РІРЅРёРІР°РµС‚СЃСЏ Рє РґР»РёРЅРµ Р·Р°РіРѕР»РѕРІРєР° 
 	if(!(iph.ver_ihl & 0x0F)) 
 		iph.ver_ihl |= 0x0F & (header_length / 4);
 	buffer = (char *)calloc(packet_length, sizeof(char)); 
 
-	// Копирование заголовка пакета в буфер ( CRC равно 0). 
+	// РљРѕРїРёСЂРѕРІР°РЅРёРµ Р·Р°РіРѕР»РѕРІРєР° РїР°РєРµС‚Р° РІ Р±СѓС„РµСЂ ( CRC СЂР°РІРЅРѕ 0). 
 	memcpy(buffer, &iph, sizeof(struct ip_header));
 
-	// Копирование данных в буфер 
+	// РљРѕРїРёСЂРѕРІР°РЅРёРµ РґР°РЅРЅС‹С… РІ Р±СѓС„РµСЂ 
 	if(data)
 		memcpy(buffer + header_length, data, data_length); 
 
-	// Вычисление CRC. 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ CRC. 
 	iph.crc = rs_crc((unsigned short *)buffer, packet_length); 
 
-	// Копирование заголовка пакета в буфер (CRC посчитана). 
+	// РљРѕРїРёСЂРѕРІР°РЅРёРµ Р·Р°РіРѕР»РѕРІРєР° РїР°РєРµС‚Р° РІ Р±СѓС„РµСЂ (CRC РїРѕСЃС‡РёС‚Р°РЅР°). 
 	memcpy(buffer, &iph, sizeof(struct ip_header)); 
 
-	// Отправка IP пакета в сеть.
+	// РћС‚РїСЂР°РІРєР° IP РїР°РєРµС‚Р° РІ СЃРµС‚СЊ.
 	result = sendto(s, buffer, packet_length, 0, (struct sockaddr *)&target, sizeof(target));
 	free(buffer);
 	return result;
 }
 
 
-// Отправка пакетов UDP
+// РћС‚РїСЂР°РІРєР° РїР°РєРµС‚РѕРІ UDP
 int CudpgenDlg::rs_send_udp(SOCKET s, struct ip_header iph, struct udp_header udph, unsigned char * data, int data_length)
 {
 	char * buffer; 
@@ -402,43 +402,43 @@ int CudpgenDlg::rs_send_udp(SOCKET s, struct ip_header iph, struct udp_header ud
 	unsigned char header_length;
 	unsigned int packet_length; 
 
-	// Вычисление длин пакета и заголовка. 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РґР»РёРЅ РїР°РєРµС‚Р° Рё Р·Р°РіРѕР»РѕРІРєР°. 
 	header_length = sizeof (struct udp_header); 
 	packet_length = header_length + data_length; 
 
-	// Установка CRC. 
+	// РЈСЃС‚Р°РЅРѕРІРєР° CRC. 
 	udph.crc = 0;
 
-	// Если длина пакета не задана, то длина пакета 
-	// приравнивается к длине заголовка
+	// Р•СЃР»Рё РґР»РёРЅР° РїР°РєРµС‚Р° РЅРµ Р·Р°РґР°РЅР°, С‚Рѕ РґР»РёРЅР° РїР°РєРµС‚Р° 
+	// РїСЂРёСЂР°РІРЅРёРІР°РµС‚СЃСЏ Рє РґР»РёРЅРµ Р·Р°РіРѕР»РѕРІРєР°
 	if(!udph.length)
 		udph.length = htons(packet_length); 
 	buffer = (char *)calloc(packet_length, sizeof(char)); 
 
-	// Копирование заголовка пакета в буфер (CRC равно 0). 
+	// РљРѕРїРёСЂРѕРІР°РЅРёРµ Р·Р°РіРѕР»РѕРІРєР° РїР°РєРµС‚Р° РІ Р±СѓС„РµСЂ (CRC СЂР°РІРЅРѕ 0). 
 	memcpy(buffer, &udph, sizeof(struct udp_header));
 
-	// Копирование протокола более высокого уровня (данных) 
+	// РљРѕРїРёСЂРѕРІР°РЅРёРµ РїСЂРѕС‚РѕРєРѕР»Р° Р±РѕР»РµРµ РІС‹СЃРѕРєРѕРіРѕ СѓСЂРѕРІРЅСЏ (РґР°РЅРЅС‹С…) 
 	if(data)
 		memcpy(buffer + header_length, data, data_length); 
 
-	// Вычисление CRC. 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ CRC. 
 	udph.crc = rs_pseudo_crc(buffer, packet_length, iph.src_addr, iph.dst_addr, packet_length, IPPROTO_UDP); 
 
-	// Копирование заголовка пакета в буфер (CRC посчитана). 
+	// РљРѕРїРёСЂРѕРІР°РЅРёРµ Р·Р°РіРѕР»РѕРІРєР° РїР°РєРµС‚Р° РІ Р±СѓС„РµСЂ (CRC РїРѕСЃС‡РёС‚Р°РЅР°). 
 	memcpy(buffer, &udph, sizeof(struct udp_header)); 
 
-	// Отправка IP пакета с вложенным UDP пакетом. 
+	// РћС‚РїСЂР°РІРєР° IP РїР°РєРµС‚Р° СЃ РІР»РѕР¶РµРЅРЅС‹Рј UDP РїР°РєРµС‚РѕРј. 
 	result = rs_send_ip(s, iph, reinterpret_cast<unsigned char *>(buffer), packet_length, udph.dst_port); 
 	free(buffer); 
 	return result;
 }
 
 
-// Деинициализация библиотеки Winsock
+// Р”РµРёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р±РёР±Р»РёРѕС‚РµРєРё Winsock
 int CudpgenDlg::rs_exit(void)
 {
-	// Закрытие библиотеки Winsock
+	// Р—Р°РєСЂС‹С‚РёРµ Р±РёР±Р»РёРѕС‚РµРєРё Winsock
 	WSACleanup();
 	return 0;
 }
